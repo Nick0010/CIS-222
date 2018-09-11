@@ -4,7 +4,7 @@
  * Date: September 6th, 2018
  * Desc: Quiz 1
  *
- * Grade: 11/10
+ * Grade: 10 / 10
  */
 
 // 2 pts
