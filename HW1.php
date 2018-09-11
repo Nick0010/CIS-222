@@ -3,7 +3,9 @@
  *   Nick bartel
  *   8/30/2018
  *   PHP examples
-*/
+ *
+ *   Grade: 10/10
+ */
 define("TITLE", "HW1");
 ?>
 
