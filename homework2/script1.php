@@ -1,3 +1,11 @@
+<?php
+/**
+ * HW 2
+ * Grade: 3 / 10
+ *
+ * Where is the PHP?
+ */
+?>
 <!DOCTYPE html>
  <html lang="en">
  <head>
