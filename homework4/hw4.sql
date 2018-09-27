@@ -35,4 +35,4 @@ UPDATE Classes SET class_Name = 'Web Database Development with PHP' where id = 1
 
 SELECT * FROM Classes WHERE school_id = 1;
 
-SELECT * from Classes WHERE class_Name = 'Web Database Development with PHP';
+SELECT * FROM Classes WHERE class_Name = 'Web Database Development with PHP';
