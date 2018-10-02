@@ -1,3 +1,5 @@
+-- Grade 10 / 10
+
 CREATE TABLE Schools (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   school_name VARCHAR(60) NOT NULL,
