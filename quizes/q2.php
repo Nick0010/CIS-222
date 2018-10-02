@@ -3,6 +3,8 @@
  * User: Nick Bartel
  * Date: September 13th, 2018
  * Desc: Quiz 2
+ *
+ * Grade: 11 / 10
  */
 
 // 3 pts
