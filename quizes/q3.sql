@@ -3,6 +3,8 @@
  * User: Nick Bartel
  * Date: September 27th, 2018
  * Desc: Quiz 3
+ *
+ * Grade: 9 / 10
  */
 
 /*
@@ -33,9 +35,11 @@
     );
 
 
--- 3 pts
+-- 1/3 pts
 -- 2. Write an insert statement that will insert 3 rows of data into this table, you can make the data up but it should make sense.
 -- Feel free to ask me if you need any clarification.
+
+-- You need to specify fields before values, and dates must be wrapped in single quotes.
 	INSERT INTO Hardware VALUES(NULL, 1, 140.23, '6N549', NULL, 6/5/2017, NULL, 6/6/2017),
 								(NULL, 1, 1090.96, '54Q678', 'BOSSES MACHINE, MAX PRIORITY', 1/3/2015, 5/6/2018),
                                 (NULL, 3, 100.63, '4B', 'An old gameboy we gave to the bosses kid, dont service', 3/5/2016, 7/23/2016);
