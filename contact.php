@@ -1,17 +1,17 @@
 
     <div>
         <h1>Contact page</h1>
-        <p>
-            Phone number: 7858195555
-        </p>
-        <p>
-            Email: ContactUs@greatlakesbarcoding.com
-        </p>
-        <p>
-            Snail Mail: 123 Fake Street,
-            &nbsp;      Dearborn, MI
-            &nbsp;      48177
-        </p>
+        <form>
+            <p>
+                Your name: <input type="text" name="name">
+            </p>
+            <p>
+                Your email: <input type="text" name="email">
+            </p>
+            <p>
+                Your message: <input type="text" name="message">
+            </p>
+        </form>
     </div>
 </body>
 </html>
