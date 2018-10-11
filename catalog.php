@@ -20,15 +20,14 @@ catch(exception $e) {
 ?>
 <div>
     <h1>Welcome to Great Lakes Barcoding!</h1>
-    <div>
     <?php
     foreach ($results as $row) {
-
-        echo "<span class=\"catalog\"><p>Product ID: " .  $row['pid'] . "</p>";
-        echo "<p>Product Name: " . $row['name'] . "</p>";
-        echo "<p>Product Description: " . $row['description'] . "</p>";
-        echo "<p>Price: " . $row['price'] . "</p><br></span>";
+        echo "<table class=\"catalog\">";
+        echo "<tr> <th>Product Name:  </th> <td>" . $row['name'] . "</td></tr>";
+        echo "<tr><td>Product ID: </td><td>" .  $row['pid'] . "</td></tr>";
+        echo "<tr><td>Product Description: </td><td>" . $row['description'] . "</td></tr>";
+        echo "<tr><td>Price: </td><td>" . $row['price'] . "</td></tr>";
+        echo "</table>";
     }
     ?>
-    </div>
 </div>

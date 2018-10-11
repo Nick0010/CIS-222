@@ -1,5 +1,5 @@
 .catalog:nth-child(even) {
-    background-color: gray;
+    background-color: white;
 }
 
 .catalog:nth-child(odd) {
