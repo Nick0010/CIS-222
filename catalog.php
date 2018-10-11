@@ -1,23 +1,34 @@
+<?php
+require_once ("../../connect.php");
+$dsn="mysql:host=" . HOST . ";dbname=" . DATABASE . ";charset=" . CHARSET;
+$opt = [
+PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+PDO::ATTR_EMULATE_PREPARES => false,
+];
+$pdo = new PDO($dsn, USER, PASS, $opt);
+$query = 'SELECT * FROM Product;';
+try {
+    $stmt = $pdo->query($query);
+    $results = $stmt->fetchAll();
+}
+catch(exception $e) {
+    echo "<h1>Something is very broken here, send an email to njbartel@hawkmail.hfcc.edu
+                with details on how you got here</h1>";
+}
 
+?>
 <div>
     <h1>Welcome to Great Lakes Barcoding!</h1>
-    <p>
-        All this is supposed to be drawn from a database that isn't populated yet
-    </p>
+    <div>
+    <?php
+    foreach ($results as $row) {
 
-    <p>
-        So here's some filler instead,
-    </p>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-    <p>
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-     <p>
-         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-     </p>
-    <p>
-         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+        echo "<span class=\"catalog\"><p>Product ID: " .  $row['pid'] . "</p>";
+        echo "<p>Product Name: " . $row['name'] . "</p>";
+        echo "<p>Product Description: " . $row['description'] . "</p>";
+        echo "<p>Price: " . $row['price'] . "</p><br></span>";
+    }
+    ?>
+    </div>
 </div>
