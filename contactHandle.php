@@ -14,9 +14,10 @@ $opt = [
     PDO::ATTR_EMULATE_PREPARES => false,
 ];
 $pdo = new PDO($dsn, USER, PASS, $opt);
-$query = 'INSERT INTO Contact VALUES(NULL, "' . $_POST["name"] .  '", "' . $_POST["email"] . '", "' .  $_POST["message"] . '")';
+$query = $pdo->prepare("INSERT INTO Contact VALUES(NULL, :name, :email, :message)");
+
 try {
-    $stmt = $pdo->query($query);
+    $query->execute(array(':name' => $_POST['name'], ':email' => $_POST['email'], ':message' => $_POST['message']));
     echo '<h2> Thank you for contacting us</h2>';
     echo '<p>someone will follow up with your request as soon as possible </p>';
 }

@@ -7,10 +7,10 @@ PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 PDO::ATTR_EMULATE_PREPARES => false,
 ];
 $pdo = new PDO($dsn, USER, PASS, $opt);
-$query = 'SELECT * FROM Product;';
+$query = $pdo->prepare('SELECT * FROM Product;');
 try {
-    $stmt = $pdo->query($query);
-    $results = $stmt->fetchAll();
+    $query->execute();
+    $results = $query->fetchAll();
 }
 catch(exception $e) {
     echo "<h1>Something is very broken here, send an email to njbartel@hawkmail.hfcc.edu
