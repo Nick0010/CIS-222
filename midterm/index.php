@@ -38,7 +38,18 @@
             foreach ($row as $field => $data) {
                 echo "<p> $field: $data</p>";
             }
-            echo "_______________________________________________";
+			// pass the information pulled from the server to the update car page to save a sql query and also some coding
+			echo "
+			<form action='updateCar.php' method='post'>
+				<input type='hidden' name='make' value='" . $row['make'] . "'>
+				<input type='hidden' name='model' value='" . $row['model'] ."'>
+				<input type='hidden' name='price' value=" . $row['price'] . ">
+				<input type='hidden' name='year' value=" . $row['year'] . ">
+				<input type='submit' name='make' value='Update'>
+			</form>";
+		
+			echo "<span>_______________________________________________</span>";
+			// keep track of the number of rows inserted
 			$count++;
         }
     }
