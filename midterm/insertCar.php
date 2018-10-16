@@ -30,6 +30,7 @@
 	}
 	else{
 ?>
+	<a href="index.php"> Back To Home </a>
 		<h2>
 			Insert a new entry
 		</h2>
@@ -41,7 +42,6 @@
 			<p>Year: <input type='text' name='year'></p>
 			<input type='hidden' name='filled' value=1>
 			<input type='submit'>
-		
 		</form>
 <?php
 	}
