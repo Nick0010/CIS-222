@@ -47,8 +47,13 @@
 					<input type='hidden' name='price' value=" . $row['price'] . ">
 					<input type='hidden' name='year' value=" . $row['year'] . ">
 					<input type='submit' value='Update'>
-			</form>";
+				</form>";
+			// pass the ID so the vehicla can be deleted
+			echo "
+				<form action='deleteCar.php' method='post'>
+					<input type='hidden' name='id' value=" . $row['id'] . ">
 					<input type='submit' value='Delete'>
+				</form>";
 			echo "<span>_______________________________________________</span>";
 			// keep track of the number of rows inserted
 			$count++;
