@@ -1,0 +1,7 @@
+.catalog:nth-child(even) {
+    background-color: white;
+}
+
+.catalog:nth-child(odd) {
+    background-color: lightblue;
+}
