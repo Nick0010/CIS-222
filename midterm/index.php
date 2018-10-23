@@ -6,6 +6,8 @@
  * Link: https://cislinux.hfcc.edu/~njbartel/cis222/midterm/
  * Midterm Index page
  * queries a database to find all cars listed in it
+ *
+ * Grade: 100 / 100
  */
 
     require_once ("../../../connect.php");
