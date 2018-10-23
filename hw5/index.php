@@ -5,6 +5,8 @@
  * Time: 6:15 PM
  * Homework 5 index page
  * supposed to be a php based database manager
+ *
+ * Grade: 10 / 10
  */
 
     require_once ("../../../connect.php");
