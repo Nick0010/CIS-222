@@ -1,7 +1,7 @@
 <?php
 /*
  * @author: Nick Bartel
- * @link: https://cislinux.hfcc.edu/~njbartel/cis222/
+ * @link: https://cislinux.hfcc.edu/~njbartel/cis222/P1
  * Big project thing
  */
     require_once('header.php');
