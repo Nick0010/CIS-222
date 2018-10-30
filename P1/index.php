@@ -3,6 +3,9 @@
  * @author: Nick Bartel
  * @link: https://cislinux.hfcc.edu/~njbartel/cis222/
  * Big project thing
+ *
+ * Grade: 85 / 150
+ * Link above does not work.
  */
     require_once('header.php');
 if (isset($_POST['request'])){
