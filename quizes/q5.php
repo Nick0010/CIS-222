@@ -3,6 +3,8 @@
  * User: Nick Bartel
  * Date: October 25th, 2018
  * Desc: Quiz 5
+ *
+ * Grade: 11 / 10
  */
 try {
 // 1. (2pts) You have an email phone number in the $sms var.
