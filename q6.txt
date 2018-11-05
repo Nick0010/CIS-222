@@ -1,0 +1,64 @@
+<?php
+/**
+ * User: Nick
+ * Date: November 1st, 2018
+ * Desc: Quiz 6
+ */
+
+// 1. (4pts) Define a simple class called Transaction.
+                    // Your class should have a standard construct function, but it doesn't need to do anything yet.
+                    // It should also have the following private properties
+                        // transaction_id
+                        // user_id (feel free to change this to the user ID for your table)
+                        // transaction_total
+                        // transaction_date
+						class Transaction {
+							private $transaction_id;
+							private $transaction_total;
+							private $transaction_date;
+							private $user_id;
+							
+							function __construct( $id, $total, $date, $uid ) {
+								$this->transaction_id = $id;
+								$this->transaction_total = $total;
+								$this->transaction_date = $date;
+								$this->user_id = $uid;
+							}
+							
+						
+					
+
+
+// 2. (4pts) Add a get and set function for one of your classes properties above (any one is fine, transaction_id recommended).
+// Hint: A get function returns a property, a set function saves data into it.
+							function setUserID($uid){
+								$this->user_id = $uid;
+							}
+							function getUserID(){
+								return $this->user_id;
+							}
+
+// 3. (2pt) In the $myTransaction variable, create an instance of the class you created above.
+							$myTransaction = new Transaction();						
+
+// B. (2pt) Add a get and set function for all your remaining properties.
+							function setTransactionID($id){
+								$this->transaction_id = $id;
+							}
+							function getTransactionID(){
+								return $this->transaction_id;
+							}
+							function setTotal($total){
+								$this->transaction_total = $total;
+							}
+							function getTotal(){
+								return $this->transaction_total;
+							}
+							function setTDate($date){
+								$this->transaction_date = $date;
+							}
+							function getTDate(){
+								return $this->transaction_date;
+							}
+
+						}
