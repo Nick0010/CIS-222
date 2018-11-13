@@ -3,6 +3,7 @@
  * User: Njbartel
  * Date: November 8th, 2018
  * Desc: Quiz 7
+ * Grade: 11 / 10
  */
 
 // 1. (4pts) Create a cookie using the PHP function and name it user_email. The cookie should contain the value saved in the $e variable.
