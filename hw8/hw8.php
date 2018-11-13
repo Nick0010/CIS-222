@@ -28,7 +28,6 @@ else {
         echo "<body>";
 }
 
-
 ?>
 <form method="get">
     <input type="radio" name="bgcolor" value="Green"> Green <br>
