@@ -3,6 +3,8 @@
  * User: Nick
  * Date: November 1st, 2018
  * Desc: Quiz 6
+ *
+ * Grade 12 / 10
  */
 
 // 1. (4pts) Define a simple class called Transaction.
@@ -36,10 +38,7 @@
 							}
 							function getUserID(){
 								return $this->user_id;
-							}
-
-// 3. (2pt) In the $myTransaction variable, create an instance of the class you created above.
-							$myTransaction = new Transaction();						
+							}					
 
 // B. (2pt) Add a get and set function for all your remaining properties.
 							function setTransactionID($id){
@@ -62,3 +61,6 @@
 							}
 
 						}
+
+// 3. (2pt) In the $myTransaction variable, create an instance of the class you created above.
+							$myTransaction = new Transaction();	
