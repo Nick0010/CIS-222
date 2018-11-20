@@ -3,6 +3,7 @@
  * User: Njbartel
  * Date: November 15th, 2018
  * Desc: Quiz 8
+ * Grade: 13 / 10
  */
 
 // 1. (2pts) In a comment, define what an XSS attack is.
