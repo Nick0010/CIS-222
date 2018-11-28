@@ -4,6 +4,7 @@
  * User: njbartel
  * Date: 11/8/2018
  * Time: 5:40 PM
+ * Grade: 12 / 10
  */
 
 class human{

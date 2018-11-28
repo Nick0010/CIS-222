@@ -4,6 +4,8 @@
  * User: njbartel
  * Date: 11/13/2018
  * Time: 5:38 PM
+ * Grade: 10 / 10
+ *
  */
 session_start();
 if (isset($_SESSION['count'])){
