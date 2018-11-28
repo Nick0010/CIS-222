@@ -17,6 +17,10 @@ else {
             require('catalog.php');
         elseif ($_GET['request'] == 'contact')
             require('contact.php');
+        elseif ($_GET['request'] == 'signUp')
+            require('signup.php');
+        elseif ($_GET['request'] == 'login')
+            require('login.php');
     } else
         require('home.php');
     require_once('footer.php');

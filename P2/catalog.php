@@ -1,5 +1,5 @@
 <?php
-require_once ("../../connect.php");
+require_once ("../../../connect.php");
 $dsn="mysql:host=" . HOST . ";dbname=" . DATABASE . ";charset=" . CHARSET;
 $opt = [
 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
