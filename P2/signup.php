@@ -11,9 +11,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up</title>
 </head>
 <body>
@@ -29,21 +26,23 @@ if (isset($_POST['submitted'])){
         PDO::ATTR_EMULATE_PREPARES => false,
     ];
     $pdo = new PDO($dsn, USER, PASS, $opt);
-
+	$query = pdo->prepare('SELECT Username, password FROM Customer');
+	$query->execute();
+	$users = $query->fetchAll();
+	
     $query = $pdo->prepare('INSERT INTO Customer VALUES(NULL, :name, :username, :password, NULL);');
-    //try {
+    try {
         $key = array(":name" => $_POST['name'], ":username"  => $_POST['username'], ":password" => crypt($_POST['password']));
-        print_r($key);
         $query->execute($key);
         echo '<h1> New user creation successful </h1>';
-    //}
-    //catch(exception $e) {
-     //   echo "<h1>Something is very broken here, send an email to njbartel@hawkmail.hfcc.edu
-     //           with details on how you got here</h1>";
-    //}
+    }
+    catch(exception $e) {
+        echo "<h1>Something is very broken here, send an email to njbartel@hawkmail.hfcc.edu
+                with details on how you got here</h1>";
+    }
 }
 ?>
-<h1> New User </h1>
+<h2> New User </h2>
 <form method="post">
     Name: <input type="text" name="name" required> <br>
     User Name: <input type="text" name="username" required> <br>
@@ -52,6 +51,4 @@ if (isset($_POST['submitted'])){
     <input type="submit">
 </form>
 
-</body>
-</html>
 
