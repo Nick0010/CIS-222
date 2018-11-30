@@ -44,9 +44,9 @@ if (isset($_POST['submitted'])){
 ?>
 <h2> New User </h2>
 <form method="post">
-    Name: <input type="text" name="name" required> <br>
-    User Name: <input type="text" name="username" required> <br>
-    Password: <input type="password" name="password" required> <br>
+    Name: <input type="text" name="name" required> <br><br>
+    User Name: <input type="text" name="username" required> <br><br>
+    Password: <input type="password" name="password" required> <br><br>
     <input type="hidden" name="submitted" value="1">
     <input type="submit">
 </form>

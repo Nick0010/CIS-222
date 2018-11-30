@@ -5,13 +5,11 @@
  * Date: 11/27/2018
  * Time: 5:21 PM
  */
-session_start();
 if (isset($_SESSION['name'])) {
     //echo "<h1> USER: " . $_SESSION['name'] . " ALREADY SIGNED IN <a href='index.php?request=signout'> SIGN OUT?</a></h1>";
     die("<h1> USER: " . $_SESSION['name'] . " ALREADY SIGNED IN <a href='index.php?request=signout'> SIGN OUT?</a></h1>");
 }
-else//if (isset($_SESSION['submitted'])){
-{
+elseif (isset($_POST['submitted'])){
     require_once("../../../connect.php");
     $dsn = "mysql:host=" . HOST . ";dbname=" . DATABASE . ";charset=" . CHARSET;
     $opt = [
@@ -19,23 +17,29 @@ else//if (isset($_SESSION['submitted'])){
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         PDO::ATTR_EMULATE_PREPARES => false,
     ];
+	
     $pdo = new PDO($dsn, USER, PASS, $opt);
     $query = $pdo->prepare('SELECT * FROM Customer WHERE username=:user & active IS NULL;');
     $query->execute(array(":user" => $_POST['username']));
-    $customer = $query->fetch();
+    $customers = $query->fetchAll();
+	$customer = $customers['0'];
+	print_r($customer);
     if (crypt($_POST['password']) == $customer['password']){
         $_SESSION['cid'] = $customer['cid'];
         $_SESSION['name'] = $customer['name'];
         $_SESSION['username'] = $customer['username'];
+		echo "<h1> Welcome use: " . $_SESSION['name'];
     }
-
+	else
+		echo "<h1> Incorrect Login information</h1>";
 }
 
 ?>
 <h2> Login</h2>
 <form method="post">
-    User Name: <input type="text" name="username" required> <br>
-    Password: <input type="password" name="password" required> <br>
+    User Name: <input type="text" name="username" required> <br><br>
+    Password: <input type="password" name="password" required> <br><br>
     <input type="hidden" name="submitted" value="1">
     <input type="submit">
 </form>
+<p> Not a member? <a href="index.php?request=signup"> Sign up! </a>

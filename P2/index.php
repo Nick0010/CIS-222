@@ -17,12 +17,14 @@ else {
             require('catalog.php');
         elseif ($_GET['request'] == 'contact')
             require('contact.php');
-        elseif ($_GET['request'] == 'signUp')
+        elseif ($_GET['request'] == 'signup')
             require('signup.php');
         elseif ($_GET['request'] == 'login')
             require('login.php');
-        elseif ($_GET['request'] == 'logout')
+        elseif ($_GET['request'] == 'logout'){
             session_unset();
+			echo "<h2> User logged out </h2";
+		}
     } else
         require('home.php');
     require_once('footer.php');
