@@ -26,13 +26,13 @@ if (isset($_POST['submitted'])){
         PDO::ATTR_EMULATE_PREPARES => false,
     ];
     $pdo = new PDO($dsn, USER, PASS, $opt);
-	$query = pdo->prepare('SELECT Username, password FROM Customer');
+	/*$query = $pdo->prepare('SELECT Username, password FROM Customer');
 	$query->execute();
-	$users = $query->fetchAll();
+	$users = $query->fetchAll();*/
 	
     $query = $pdo->prepare('INSERT INTO Customer VALUES(NULL, :name, :username, :password, NULL);');
     try {
-        $key = array(":name" => $_POST['name'], ":username"  => $_POST['username'], ":password" => crypt($_POST['password']));
+        $key = array(":name" => $_POST['name'], ":username"  => strtolower($_POST['username']), ":password" => crypt($_POST['password']));
         $query->execute($key);
         echo '<h1> New user creation successful </h1>';
     }

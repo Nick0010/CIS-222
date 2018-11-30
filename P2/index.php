@@ -21,6 +21,8 @@ else {
             require('signup.php');
         elseif ($_GET['request'] == 'login')
             require('login.php');
+        elseif ($_GET['request'] == 'logout')
+            session_unset();
     } else
         require('home.php');
     require_once('footer.php');
