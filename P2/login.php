@@ -19,18 +19,23 @@ elseif (isset($_POST['submitted'])){
     ];
 	
     $pdo = new PDO($dsn, USER, PASS, $opt);
-    $query = $pdo->prepare('SELECT * FROM Customer WHERE username=:user & active IS NULL;');
+    $query = $pdo->prepare('SELECT * FROM Customer WHERE username = :user AND active IS NULL;');
     $query->execute(array(":user" => $_POST['username']));
-    $customers = $query->fetchAll();
-	$customer = $customers['0'];
+    $customer = $query->fetch();
+
+    echo "<br> " . crypt($_POST['password'],'$1$SomebodyTooLove') ."<br>";
+
 	print_r($customer);
-    if (crypt($_POST['password']) == $customer['password']){
+    if (crypt($_POST['password'],'$1$SomebodyTooLove') == $customer['password']){
         $_SESSION['cid'] = $customer['cid'];
         $_SESSION['name'] = $customer['name'];
         $_SESSION['username'] = $customer['username'];
-		echo "<h1> Welcome use: " . $_SESSION['name'];
+		echo "<h1> Welcome user: " . $_SESSION['name'];
+		include("home.php");
     }
-	else
+	elseif (!isset($customer))
+        echo "<h1> No user by that name found";
+    else
 		echo "<h1> Incorrect Login information</h1>";
 }
 

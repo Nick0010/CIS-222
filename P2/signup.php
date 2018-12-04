@@ -32,7 +32,7 @@ if (isset($_POST['submitted'])){
 	
     $query = $pdo->prepare('INSERT INTO Customer VALUES(NULL, :name, :username, :password, NULL);');
     try {
-        $key = array(":name" => $_POST['name'], ":username"  => strtolower($_POST['username']), ":password" => crypt($_POST['password']));
+        $key = array(":name" => $_POST['name'], ":username"  => strtolower($_POST['username']), ":password" => crypt($_POST['password'],'$1$SomebodyTooLove'));
         $query->execute($key);
         echo '<h1> New user creation successful </h1>';
     }
