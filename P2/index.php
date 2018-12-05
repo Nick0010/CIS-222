@@ -21,6 +21,8 @@ else {
             require('signup.php');
         elseif ($_GET['request'] == 'login')
             require('login.php');
+        elseif ($_POST['request'] == 'addToCart')
+            require('addToCart.php');
         elseif ($_GET['request'] == 'logout'){
             session_unset();
 			echo "<h2> User logged out </h2>";

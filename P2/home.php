@@ -1,6 +1,6 @@
 
-    <div>
-        <h1>Welcome to Great Lakes Barcoding!</h1>
+    <div class="text">
+        <h1 class="text">Welcome to Great Lakes Barcoding!</h1>
         <p>
             You will be able to find information regarding printers, labels, scanners, and contracts here.
             We offer a variety of options available that will be perfect for any type of business.
