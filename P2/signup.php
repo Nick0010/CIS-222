@@ -17,19 +17,8 @@
 
 <?php
 if (isset($_POST['submitted'])){
+    
 
-    require_once ("../../../connect.php");
-    $dsn="mysql:host=" . HOST . ";dbname=" . DATABASE . ";charset=" . CHARSET;
-    $opt = [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES => false,
-    ];
-    $pdo = new PDO($dsn, USER, PASS, $opt);
-	/*$query = $pdo->prepare('SELECT Username, password FROM Customer');
-	$query->execute();
-	$users = $query->fetchAll();*/
-	
     $query = $pdo->prepare('INSERT INTO Customer VALUES(NULL, :name, :username, :password, NULL);');
     try {
         $key = array(":name" => $_POST['name'], ":username"  => strtolower($_POST['username']), ":password" => crypt($_POST['password'],'$1$SomebodyTooLove'));

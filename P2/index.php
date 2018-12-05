@@ -23,7 +23,8 @@ else {
             require('login.php');
         elseif ($_GET['request'] == 'logout'){
             session_unset();
-			echo "<h2> User logged out </h2";
+			echo "<h2> User logged out </h2>";
+			require ('home');
 		}
     } else
         require('home.php');
