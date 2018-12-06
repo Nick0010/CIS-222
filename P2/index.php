@@ -3,6 +3,7 @@
  * @author: Nick Bartel
  * @link: https://cislinux.hfcc.edu/~njbartel/cis222/
  * Big project thing
+ * Loads other pages based on a variable passed by a GET request
  */
     require_once('header.php');
 if (isset($_POST['request'])){

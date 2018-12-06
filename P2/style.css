@@ -1,3 +1,8 @@
+/*
+    By Nick Bartel
+    Really simple style stuff
+    I am not adept at css or aesthetic stuff in general please be kind
+ */
 .catalog:nth-child(even) {
     background-color: white;
 }

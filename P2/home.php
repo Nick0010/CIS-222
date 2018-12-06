@@ -1,4 +1,6 @@
-
+<!--
+    I really wish i had more to put on the front page but i dont
+-->
     <div class="text">
         <h1 class="text">Welcome to Great Lakes Barcoding!</h1>
         <p>
