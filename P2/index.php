@@ -30,7 +30,7 @@ else {
 			require ('home.php');
 		}
     } else
-        require('home.php');
+        require('404.php');
     require_once('footer.php');
 }
 ?>

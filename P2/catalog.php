@@ -27,7 +27,7 @@ catch(exception $e) {
         echo "<tr><td>Product Description: </td><td>" . $row['description'] . "</td></tr>";
         echo "<tr><td>Price: </td><td>" . $row['price'] . "</td></tr>";
         echo "<tr><td>
-                <form method='POST' target='index.php'>
+                <form method='GET' target='index.php'>
                     <input type='hidden' name='itemNum' value= " . $row['pid'] . ">
                     <input type='hidden' name='request' value='addToCart'>
                     <input type='submit' value='Add To Cart'>

@@ -8,13 +8,6 @@
  */
 
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Sign Up</title>
-</head>
-<body>
 
 <?php
 if (isset($_POST['submitted'])){
