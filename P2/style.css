@@ -5,3 +5,15 @@
 .catalog:nth-child(odd) {
     background-color: lightblue;
 }
+
+.text{
+    text-align: center;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.navbar{
+    text-align: center;
+    width: 100%;
+    font-size: 14pt
+}

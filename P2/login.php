@@ -15,15 +15,12 @@ elseif (isset($_POST['submitted'])){
     $query->execute(array(":user" => $_POST['username']));
     $customer = $query->fetch();
 
-    echo "<br> " . crypt($_POST['password'],'$1$SomebodyTooLove') ."<br>";
-
-	print_r($customer);
     if (crypt($_POST['password'],'$1$SomebodyTooLove') == $customer['password']){
         $_SESSION['cid'] = $customer['cid'];
         $_SESSION['name'] = $customer['name'];
         $_SESSION['username'] = $customer['username'];
 		echo "<h1> Welcome user: " . $_SESSION['name'];
-		include("home.php");
+		include("index.php");
     }
 	elseif (!isset($customer))
         echo "<h1> No user by that name found";

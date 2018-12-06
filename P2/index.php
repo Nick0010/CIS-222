@@ -21,12 +21,12 @@ else {
             require('signup.php');
         elseif ($_GET['request'] == 'login')
             require('login.php');
-        elseif ($_POST['request'] == 'addToCart')
+        elseif ($_GET['request'] == 'addToCart')
             require('addToCart.php');
         elseif ($_GET['request'] == 'logout'){
             session_unset();
 			echo "<h2> User logged out </h2>";
-			require ('home');
+			require ('home.php');
 		}
     } else
         require('home.php');
