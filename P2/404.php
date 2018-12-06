@@ -7,6 +7,6 @@
  * Display a 404 error
  */
 ?>
-<h1>ERROR 404</h1> <br>
+<h1>ERROR 404</h1>
 <h2> PAGE NOT FOUND</h2>
-<p><a href="index.php?request=home">Retreat to charted waters</a></p>
+<h3><a href="index.php?request=home">Retreat to charted waters</a></h3>

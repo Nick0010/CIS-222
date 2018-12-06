@@ -29,8 +29,12 @@ else {
 			echo "<h2> User logged out </h2>";
 			require ('home.php');
 		}
+		elseif ($_GET['request'] == 'cart')
+            require ('cart.php');
+		else
+		    require ("404.php");
     } else
-        require('404.php');
+        require('home.php');
     require_once('footer.php');
 }
 ?>
