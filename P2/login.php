@@ -10,31 +10,22 @@ if (isset($_SESSION['name'])) {
     die("<h1> USER: " . $_SESSION['name'] . " ALREADY SIGNED IN <a href='index.php?request=signout'> SIGN OUT?</a></h1>");
 }
 elseif (isset($_POST['submitted'])){
-    require_once("../../../connect.php");
-    $dsn = "mysql:host=" . HOST . ";dbname=" . DATABASE . ";charset=" . CHARSET;
-    $opt = [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES => false,
-    ];
-	echo "username passed: " . $_POST['username'];
-    $pdo = new PDO($dsn, USER, PASS, $opt);
-    $query = $pdo->prepare('SELECT * FROM Customer WHERE username LIKE \':user\' AND active IS NULL;');
+
+    $query = $pdo->prepare('SELECT * FROM Customer WHERE username = :user AND active IS NULL;');
     $query->execute(array(":user" => $_POST['username']));
     $customer = $query->fetch();
-	print_r($customer);
-	
-    if (crypt($_POST['password']) == $customer['password']){
+
+    if (crypt($_POST['password'],'$1$SomebodyTooLove') == $customer['password']){
         $_SESSION['cid'] = $customer['cid'];
         $_SESSION['name'] = $customer['name'];
         $_SESSION['username'] = $customer['username'];
-		echo "<h1> Welcome use: " . $_SESSION['name'];
+		echo "<h1> Welcome user: " . $_SESSION['name'];
+		include("index.php");
     }
-	elseif (isset($customer))
-		echo "<h1> No user found by that name</h1>";
-	else
-		echo "<h1> Incorrect password </h1>";
-		
+	elseif (!isset($customer))
+        echo "<h1> No user by that name found";
+    else
+		echo "<h1> Incorrect Login information</h1>";
 }
 
 ?>

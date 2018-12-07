@@ -1,7 +1,25 @@
+/*
+    By Nick Bartel
+    Really simple style stuff
+    I am not adept at css or aesthetic stuff in general please be kind
+ */
 .catalog:nth-child(even) {
     background-color: white;
 }
 
 .catalog:nth-child(odd) {
     background-color: lightblue;
+}
+body{
+    text-align: center;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+.text{
+
+}
+
+.navbar{
+    width: 100%;
+    font-size: 14pt
 }
