@@ -7,7 +7,7 @@
  * adds an item to the users cart
  */
 if (!isset($_SESSION["name"])){
-    echo "<h1>Please <a href='index.php?request=login'> To order a printer!</a></h1>";
+    echo "<h1>Please Log in<a href='index.php?request=login'> To order a printer!</a></h1>";
     echo "<h2> Not a member yet? <a href='index.php?request=signup'>Sign up!</a>";
     echo "<h3> Not convinced yet? <a href='index.php?request=catalog'> Check out our products page!</a></h3>";
 }

@@ -14,7 +14,8 @@ echo '<div class="navbar"> <a href="index.php?request=home"> Home </a> &nbsp;|
                     if(!isset($_SESSION['name'])) {
                         echo '<a href="index.php?request=login"> Log In </a></div>';
                     }
-                    else
+                    else {
                         echo '<a href="index.php?request=cart"> View Cart </a>';
                         echo '&nbsp|&nbsp <a href="index.php?request=logout"> Sign out </a></div>';
+					}
                 echo '</div>';

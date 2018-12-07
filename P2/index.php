@@ -1,12 +1,12 @@
 <?php
 /*
  * @author: Nick Bartel
- * @link: https://cislinux.hfcc.edu/~njbartel/cis222/
+ * @link: https://cislinux.hfcc.edu/~njbartel/cis222/P2
  * Big project thing
  * Loads other pages based on a variable passed by a GET request
  */
 require_once('header.php');
-
+// made the contact handler use a post variable because nobody wants 300+ characters passed in their url bar
 if (isset($_POST['request'])){
     if ($_POST['request'] == 'contactSubmit')
         require("contactHandle.php");
