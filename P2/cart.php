@@ -7,6 +7,8 @@
  * displays all items in a users cart and facilitates the actual ordering of the items (hopefully)
  */
 
+    //TODO: THE ACTUAL PART WHERE IT REMOVES ITEMS FROM THE DATABASE
+    //TODO: THE ACTUAL PART WHERE IT ORDERS ITEMS
 
     $query = $pdo->prepare("select * FROM Cart JOIN Product on Cart.pid = Product.pid where cid = :cid");
     $key = array(":cid" => $_SESSION['cid']);
